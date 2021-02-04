@@ -1,3 +1,8 @@
 Hello World!!!
-Second line >100
+<<<<<<< HEAD
+Second line < >100
 Third line±±±
+=======
+Second line < >100
+Third line
+>>>>>>> querty
