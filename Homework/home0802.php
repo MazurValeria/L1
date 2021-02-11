@@ -12,3 +12,4 @@
             echo $result1 * $result2;}
     if ($operator == '/') {
             echo $result1 / $result2;}
+
