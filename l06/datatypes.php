@@ -14,7 +14,6 @@ fclose($file);// ne zabivaem zakrivati file kotorii otkrili kak resurs
 
 $collable = static functiom () {
 };//ispolneaemii tip dannih, annonimnie functii, mojem etou functiu vizvati i peredati v drugoe mesto
-
 var_dump((string)1.002);//preobrazovati cislo v stroku
 var_dump((int)'521');// preobrazovati prosto cislo tzeloe
 var_dump((int)'521');//nikakie plavaiushie esli vizvali integer
