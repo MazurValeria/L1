@@ -1,5 +1,7 @@
 <?php
-$x = 1 || 2 || 3;
+
+$x = is_integer(123);
+
 if($x == 1) {
     echo 1, PHP_EOL;
 }
