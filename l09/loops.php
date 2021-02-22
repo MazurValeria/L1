@@ -1,7 +1,7 @@
 <?php
 
 $eol = PHP_SAPI === 'cli' ? PHP_EOL : '<br>';// esli v konsole to phpeol esli v brawsere to br
-
+/*
 for ($i = 0; $i < 5; $i++) {
     echo $i, $eol;
 }
@@ -54,4 +54,24 @@ for ($i = 0; $i < count($array); $i++){
     echo $array[$i], $eol;
 }
 
+$handle = fopen(__DIR__ . 'multiply_table.php', 'rb');
+while ($line = fgets($handle)){
+    echo $line;
+}
+fclose($handle); // citaem file poka on ne zakoncitsa i gets ne verniot false
+
+echo $eol;
+
+$arrayWhile = $array;
+while($arrayWhile){
+    echo array_shift($arrayWhile). $eol;
+}
+
+echo $eol;
+*/
+$data = [1, 2, 3, 6, 8, 9];
+do {
+    $number = random_int(1, 10);
+    echo $number, $eol;
+} while (in_array($number, $data));// snaceala vipolneat, potom provereaet esli ok/ esli s pervogo raza ne ugadal to cislo kotorogo net, to budet eshio probovati
 
