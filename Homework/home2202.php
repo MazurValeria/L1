@@ -8,60 +8,71 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-$menu = array(
-    'page_1' => array(
-        'text' => 'page 1',
-        'url' => 'page_1.html',
-        'children' => array()
-    ),
-    'page_2' => array(
-        'text' => 'page 2',
-        'url' => 'page_2.html',
-        'children' => array(
-            'sub_menu_1' => array(
-                'text' => 'sub menu 1',
-                'url' => 'sub_menu_1.html',
+<h1>
+    <?php echo "Menu: "; ?>
+</h1>
+<h2>
+    <ul>
+        <li><a href="/page_1.html">Text 1</a></li>
+        <li><a href="/page_2.html">Text 2</a></li>
+        <ul>
+            <li><a href="/sub_menu_1.html">Sub menu 1</a></li>
+            <li><a href="/sub_menu_2.html">Sub menu 2</a></li>
+            <li><a href="/sub_menu_3.html">Sub menu 3</a></li>
+            <li><a href="/sub_menu_4.html">Sub menu 4</a></li>
+        </ul>
+        <li><a href="/page_3.html">Text 3</a></li>
+        </li>
+
+        <?php
+        $menu = array(
+            'page_1' => array(
+                'text' => 'TEXT 1',
+                'url' => 'page_1.html',
+                'children' => array()
+            ),
+            'page_2' => array(
+                'text' => 'TEXT 2',
+                'url' => 'page_2.html',
                 'children' => array(
-                    'sub_menu_1_2' => array(
-                        'text' => 'sub menu 12',
-                        'url' => 'sub_menu_1_2.html',
+                    'sub_menu_1' => array(
+                        'text' => 'Sub menu 1',
+                        'url' => 'sub_menu_1.html',
+                        'children' => array(
+                            'sub_menu_1_2' => array(
+                                'text' => 'sub menu 12',
+                                'url' => 'sub_menu_1_2.html',
+                                'children' => array()
+                            )
+                        )
+                    ),
+                    'sub_menu_2' => array(
+                        'text' => 'sub menu 2',
+                        'url' => 'sub_menu_2.html',
+                        'children' => array()
+                    ),
+                    'sub_menu_3' => array(
+                        'text' => 'sub menu 3',
+                        'url' => 'sub_menu_3.html',
+                        'children' => array()
+                    ),
+                    'sub_menu_4' => array(
+                        'text' => 'sub menu 4',
+                        'url' => 'sub_menu_4.html',
                         'children' => array()
                     )
                 )
             ),
-            'sub_menu_2' => array(
-                'text' => 'sub menu 2',
-                'url' => 'sub_menu_2.html',
-                'children' => array()
-            ),
-            'sub_menu_3' => array(
-                'text' => 'sub menu 3',
-                'url' => 'sub_menu_3.html',
-                'children' => array()
-            ),
-            'sub_menu_4' => array(
-                'text' => 'sub menu 4',
-                'url' => 'sub_menu_4.html',
+            'page_3' => array(
+                'text' => 'TEXT 3',
+                'url' => 'page_3.html',
                 'children' => array()
             )
-        )
-    ),
-    'page_3' => array(
-        'text' => 'page 3',
-        'url' => 'page_3.html',
-        'children' => array()
-    )
-);
+        ); ?>
+</h2>
+</body>
 
-<ul>
-<li><a href="/link1">Text 1</a></li>
-<li><a href="/link2">Text 2</a></li>
-<li>
- Text 3
- <ul>
- <li><a href="/link3_1">Text 3.1</a></li>
-  <li><a href="/link3_2">Text 3.2</a></li>
-</ul>
-</li>
-</ul>
+
+</h2>
+</body>
+
