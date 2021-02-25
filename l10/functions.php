@@ -93,10 +93,16 @@ function globals()
 {
     global $data;// vzeali iz globalinoi oblasti vidimosti i izmenili eio
     $data = 333;
+    $myData = $data;
     var_dump($data);
+   // var_dump($GLOBALS['data']); hudshii variant
+
+    unset($data);// ocishaet dannie na kotorie smotrit peremennaia, vse eio dannie i eio toje
 }
 
 globals();
+
+var_dump($data);
 
 
 
