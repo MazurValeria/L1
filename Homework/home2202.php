@@ -10,6 +10,7 @@
 <body>
 <h1>
     <?php echo "Menu: "; ?>
+
 </h1>
 <h2>
     <ul>
@@ -68,7 +69,9 @@
                 'url' => 'page_3.html',
                 'children' => array()
             )
-        ); ?>
+        );
+        foreach ($menu as $item): ?>
+        <?php endforeach; ?>
 </h2>
 </body>
 
