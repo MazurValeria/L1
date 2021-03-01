@@ -118,6 +118,8 @@ $array =[
     ]
 ];
 
+ini_set('memory_limit', '1GB');// ukazivaem skoliko mi hotim operativki dlea etogo skripta, izmeneaem znacenie v php ini vremenno
+
 function countRecursive($array)
 {
     $count = 0;
