@@ -34,9 +34,11 @@ $menu = [
 ];
 
 $html = '<ul>';
-function buildMenu($menu, $children=false)
+function buildMenu($menuArray, $is_children=false): string
 {
-    foreach($menu as $id => $properties){
+    $attr = (!$is_children);
+    $menu = "<ul$attr>n";
+    foreach($menuArray as $id => $properties){
         foreach($properties as $key => $value){
             if(is_array($value))
             {
@@ -47,10 +49,14 @@ function buildMenu($menu, $children=false)
                 $$key = $value;
             }
         }
+        if(!isset($link)) {
+            $link = $id;
+        }
     }
     return $menu . "</ul>n";
-    $menu .= "<li>$title<a/>$children</li>n";
-}
+    $menu .= "<li><a href="$link">$title</a>$children</li>n";
+    unset($link, $title, $children);
+
 $html .= '</ul>';
 
 ?>
