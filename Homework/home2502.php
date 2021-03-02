@@ -34,19 +34,22 @@ $menu = [
 ];
 
 $html = '<ul>';
-for($i = 0; $i < count($menu); $i++) {
-    if (array_key_exists('children', $menu[$i])) {
-        $html .= "<li>";
-        $html .= "<a href='{$menu[$i]['link']}'>{$menu[$i]['title']}</a>";
-        $html .= "<ul>";
-        for($k = 0; $k < count($menu[$i]['children']); $k++) {
-            $html .= "<li><a href='{$menu[$i]['children'][$k]['link']}'>{$menu[$i]['children'][$k]['title']}</a></li>";
+function buildMenu($menu, $children=false)
+{
+    foreach($menu as $id => $properties){
+        foreach($properties as $key => $value){
+            if(is_array($value))
+            {
+                $children= buildMenu($value, true);
+            }
+            else{
+                $children = NULL;
+                $$key = $value;
+            }
         }
-        $html .= "</ul>";
-        $html .= "</li>";
-    } else {
-        $html .= "<li><a href='{$menu[$i]['link']}'>{$menu[$i]['title']}</a></li>";
     }
+    return $menu . "</ul>n";
+    $menu .= "<li>$title<a/>$children</li>n";
 }
 $html .= '</ul>';
 
