@@ -1,6 +1,6 @@
 <?php
 
-$menu = [
+$menuArray = [
     [
         'title' => 'Home',
         'link' => '/',
@@ -34,28 +34,24 @@ $menu = [
 ];
 
 $html = '<ul>';
-function buildMenu($menuArray, $is_children=false): string
-{
-    $attr = (!$is_children);
-    $menu = "<ul$attr>n";
-    foreach($menuArray as $id => $properties){
-        foreach($properties as $key => $value){
-            if(is_array($value))
-            {
-                $children= buildMenu($value, true);
-            }
-            else{
-                $children = NULL;
-                $$key = $value;
-            }
+function echoMenu($menuArray) {
+
+    foreach($menuArray as $menu) {
+        echo "<li><a href='{$menu['link']}'>{$menu['title']}</a>";
+
+        if(array_key_exists('children', $menu)) {
+            echo '<ul>';
+
+            echoMenu($menu['children']);
+            echo '</ul>';
         }
-        if(!isset($link)) {
-            $link = $id;
-        }
+        echo '</li>';
     }
-    return $menu . "</ul>n";
-    $menu .= "<li><a href="$link">$title</a>$children</li>n";
-    unset($link, $title, $children);
+}
+
+echo '<ul>';
+echoMenu($menuArray);
+echo '</ul>';
 
 $html .= '</ul>';
 
