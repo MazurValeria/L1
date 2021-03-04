@@ -32,28 +32,23 @@ $menuArray = [
         'link' => '/contacts',
     ],
 ];
-
-
-function recursiveMenu($menu)
+function recursiveMenu($menuArray)
 
 {
-    $html .= '<ul>';
+$html = '<ul>';
 
-    foreach ($menu as $item)
+    foreach ($menuArray as $item)
     {
         if (is_array($item)) {
             $html .= recursiveMenu($item);
         } else {
-            $html .= "<li><a href='{$menu['link']}'>{$menu['title']}</a></li>";
+            $html .= "<li><a href='{$menuArray['link']}'>{$menuArray['title']}</a></li>";
         }
     }
     $html .= '</ul>';
     return $html;
 }
-
 echo recursiveMenu($menuArray);
-
-
 ?>
 
 <!doctype html>
