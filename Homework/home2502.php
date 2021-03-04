@@ -29,7 +29,20 @@ $menuArray = [
     ],
     [
         'title' => 'Contacts',
-        'link' => '/contacts',
+        'link' => '/contacts','children' => [
+        [
+            'title' => 'Phones',
+            'link' => '/catalog/phones'
+        ],
+        [
+            'title' => 'TV',
+            'link' => '/catalog/tv'
+        ],
+        [
+            'title' => 'MP3',
+            'link' => '/catalog/mp3'
+        ],
+    ],
     ],
 ];
 
