@@ -47,7 +47,7 @@ function recursiveMenu($menuArray)
     return $html;
 }
 
-echo recursiveMenu($menuArray);
+print_r(recursiveMenu($menuArray));
 ?>
 
 <!doctype html>
