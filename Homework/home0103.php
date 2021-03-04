@@ -33,12 +33,10 @@ $menuArray = [
     ],
 ];
 function recursiveMenu($menuArray)
-
 {
-$html = '<ul>';
+    $html = '<ul>';
+    foreach ($menuArray as $item) {
 
-    foreach ($menuArray as $item)
-    {
         if (is_array($item)) {
             $html .= recursiveMenu($item);
         } else {
@@ -48,6 +46,7 @@ $html = '<ul>';
     $html .= '</ul>';
     return $html;
 }
+
 echo recursiveMenu($menuArray);
 ?>
 
