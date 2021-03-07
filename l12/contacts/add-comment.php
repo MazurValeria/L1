@@ -1,13 +1,35 @@
 <?php
-$data = $_POST;
-
-//var_dump($data);
 
 //var_dump($_REQUEST, $_POST, $_GET);// get budet pustoi, post i request odinakovie
 
 $file =__DIR__ . '/storage/' . date('Y-m-d') . '.json';
 
-$storage = fopen($file, 'wb');
+//Read data begin
+$jsonData = file_get_contents($file);
+$storage = json_decode($jsonData, true);
+//Read data end
 
-fclose($storage);
+
+//Write data begin
+$data = $_POST;
+$data['time'] = time();
+
+$storage[] = $data;
+
+$jsonData = json_encode($storage);
+
+file_put_contents($file, $jsonData);// sozdati file kakoi i cito polojiti v nego
+//Write data end
+
+header('Location: index.php');//perehod na druguiu stranitzu, ukaz otnositelinii puti
+
+
+
+
+
+
+
+//$storage = fopen($file, 'wb');
+//
+//fclose($storage);
 
