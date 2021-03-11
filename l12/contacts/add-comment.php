@@ -13,7 +13,7 @@ $storage = json_decode($jsonData, true);
 
 // Write data begin
 $data = $_POST;
-$data['time'] = date('Y-m-d H:i:s' , time());
+$data['time'] = time();
 $storage[] = $data;
 $jsonData = json_encode($storage);
 
