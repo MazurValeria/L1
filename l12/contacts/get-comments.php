@@ -11,11 +11,11 @@ $storage = [];
 foreach ($files as $file) {
     $jsonData = file_get_contents("{$dir}/{$file}");
     $data = json_decode($jsonData, true);
+
+    $storage = array_merge($storage, $data);
     usort($storage, function($a, $b) {
         return ($b['time'] - $a['time']) ;
     });
-    $storage = array_merge($storage, $data);
-
 }
 return $storage;
 
