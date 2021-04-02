@@ -62,7 +62,7 @@ $fileHtml = drawFile($dir, $file);
     <div class="container">
         <div class="row">
             <div class="col-3">
-                <a href="logoup.php" class="btn btn-danger inline-block">Log Out</a>
+                <a href="logout.php" class="btn btn-danger inline-block">Log Out</a>
             </div>
         </div>
 
