@@ -29,3 +29,9 @@ create table user_contacts
             ON DELETE RESTRICT
             ON UPDATE CASCADE
 );
+
+INSERT INTO user_contacts (type, contact, user_id)
+VALUES
+       ('phone', '+37369584354', 1),
+       ('email', 'mazurvaleria@gmail.com', 1),
+       ('fax', '+37369584354', 1);
