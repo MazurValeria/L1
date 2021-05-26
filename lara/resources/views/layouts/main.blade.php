@@ -32,10 +32,15 @@
     </style>
 </head>
 <body class="d-flex flex-column h-100">
-
 <!-- Begin page content -->
 <main class="flex-shrink-0">
     <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <a href="/logout" class="btn btn-danger inline-block">Log Out</a>
+            </div>
+        </div>
+
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -57,3 +62,4 @@
 </footer>
 
 </body>
+</html>
