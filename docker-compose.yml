@@ -19,6 +19,14 @@ services:
       - ./docker/nginx/lara.local.conf:/etc/nginx/conf.d/lara.local.conf
     depends_on:
       - app
+  node:
+    build: docker/node
+    container_name: skillup_lara_node
+    volumes:
+      - ./lara:/var/www
+    depends_on:
+      - app
+
   db:
     image: mysql:8.0.23
     ports:
